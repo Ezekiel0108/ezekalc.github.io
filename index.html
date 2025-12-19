@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatrice</title>
+    <link rel="stylesheet" href="light-theme.css">
+    <link rel="stylesheet" href="dark-theme.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <div class="calc">
+        <input type="text" id="display" class="schermata" value="" disabled />
+        <div class="pulsanti">
+            <button type="button" class="operatore" onclick="aggiungiOperatore('+')">+</button>
+            <button type="button" class="operatore" onclick="aggiungiOperatore('-')">-</button>
+            <button type="button" class="operatore" onclick="aggiungiOperatore('*')">&times;</button>
+            <button type="button" class="operatore" onclick="aggiungiOperatore('/')">&divide;</button>
+
+            <button type="button" class="operatore" onclick="aggiungiOperatore('√')">√</button>
+            <button type="button" class="operatore" onclick="aggiungiOperatore('^')">^</button>
+            
+            <button type="button" class="clear" onclick="cancella()">AC</button>
+
+            <button type="button" onclick="aggiungiNum('7')">7</button>
+            <button type="button" onclick="aggiungiNum('8')">8</button>
+            <button type="button" onclick="aggiungiNum('9')">9</button>
+            
+            <button type="button" onclick="aggiungiNum('4')">4</button>
+            <button type="button" onclick="aggiungiNum('5')">5</button>
+            <button type="button" onclick="aggiungiNum('6')">6</button>
+
+            <button type="button" onclick="aggiungiNum('1')">1</button>
+            <button type="button" onclick="aggiungiNum('2')">2</button>
+            <button type="button" onclick="aggiungiNum('3')">3</button>
+
+            <button type="button" onclick="aggiungiNum('0')">0</button>
+            <button type="button" class="operatore-uguale" onclick="aggiungiOperatore('=')">=</button>
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
