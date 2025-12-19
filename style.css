@@ -91,3 +91,11 @@ button:hover {
   background-color: #874a5b;
 }
 
+.download-container {
+  position: absolute;
+  bottom: 20px;
+}
+
+.download {
+  padding: 0 20px;
+}
