@@ -11,7 +11,7 @@ if ('serviceWorker' in navigator) {
 let expression = '';
 
 function aggiungiNum(num) {
-  expression += num;
+  expression = controlloEspressione(expression, num);
   document.getElementById('display').value = expression;
 }
 
@@ -20,7 +20,7 @@ function aggiungiOperatore(op) {
     calcola();
     return;
   }
-  expression += op;
+  expression = controlloEspressione(expression, op);
   document.getElementById('display').value = expression;
 }
 
@@ -58,3 +58,20 @@ function cancella() {
   expression = '';
   document.getElementById('display').value = '';
 }
+
+function controlloEspressione(current_value, value) {
+    current_value += value; //aggiunta del valore del bottone premuto a current_value
+    if(current_value.match(/^[*.\/^]/gm)) {
+        return current_value = "0"
+    }else if(current_value.match(/([+\-\/*^][√?])([1-9])|([+\-\/*^][√?])/gm)){
+        if(current_value.match(/√[+\-\/*^.√]/gm)){
+            return current_value.slice(0, -1)
+        }
+        return current_value
+    }else if(current_value.match(/[+*.\-\/^√]{2,}/gm)){
+        return current_value.slice(0, -1)
+    }
+
+    return current_value
+}
+
